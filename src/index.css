@@ -80,3 +80,8 @@
   margin-bottom: 10px;
   transition: display 0.2s ease-out;
 }
+
+.purchase-status {
+  padding: 2px;
+  background-color: #f0f0f0;
+}
