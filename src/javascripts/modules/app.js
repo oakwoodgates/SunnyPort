@@ -1,5 +1,5 @@
 /**
- *  Example app
+ *  The app
  **/
 
 import I18n from '../../javascripts/lib/i18n'
@@ -36,15 +36,52 @@ class App {
       .request(API_ENDPOINTS.organizations)
       .catch(this._handleError.bind(this))
 
-    if (organizations) {
-      this.states.organizations = organizations.organizations
+    const ticket = await this._client.get('ticket')
 
-      // render application markup
-      render('.loader', getDefaultTemplate(this.states))
+    if (organizations && ticket) {
+
+      this.states.organizations = organizations.organizations
+      this.states.requester = ticket.ticket.requester
+
+      const userData = sessionStorage.getItem( ticket.ticket.requester.id );
+
+      if ( userData ) {
+        render('.loader', getDefaultTemplate(JSON.parse(userData)))
+      } else {
+        const settings =  await this._client.metadata().then( data => data.settings )
+        const body = new FormData();
+
+        body.append( 'key', settings.opkey );
+        body.append( 'app', settings.opapp );
+        body.append( 'brj', settings.spapp );
+        body.append( 'eml', ticket.ticket.requester.email );
+
+        const test = await fetch('https://zdac.biddytarot.com/', {
+          method: 'POST',
+          headers: {},
+          body: body
+        })
+        .then(response => response.json())
+        .then(data => {
+          this.states.ontraport = data;
+          return this.states.ontraport;
+        })
+        .then(data =>{
+          // render application markup
+          render('.loader', getDefaultTemplate(this.states))
+        })
+        .then( data => {
+          sessionStorage.setItem( ticket.ticket.requester.id, JSON.stringify(this.states));
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+      }
 
       return resizeContainer(this._client, MAX_HEIGHT)
     }
   }
+
 
   /**
    * Handle error
