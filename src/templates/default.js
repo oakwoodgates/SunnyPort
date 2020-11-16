@@ -33,7 +33,11 @@ function opContactPurchaseTable ( args ) {
         <table class="table-striped">
           <tr><td></td><td></td><td></td></tr>
           ${args.ontraport.purchases.map((item, i) => `
-            <tr><td class="meta">${new Date(item.date * 1000).toLocaleDateString("en-US")}</td><td class="meta">$${item.total_price}</td><td class="fs-small">${truncateString(item.name,45)}</td></tr>
+            <tr>
+              <td class="meta">${new Date(item.date * 1000).toLocaleDateString("en-US")}</td>
+              <td class="meta">$${item.total_price}</td>
+              <td class="fs-small">${truncateString(item.name,45)}</td>
+            </tr>
             `.trim()).join('')}
         </table>`
       } else {
@@ -51,7 +55,10 @@ function opContactPurchaseTable ( args ) {
         return `
         <table class="table-striped">
           ${args.ontraport.contact_tags.map((item, i) => `
-            <tr><td class="fs-small">${item.name}</td><td class="meta">${item.id}</td></tr>
+            <tr>
+              <td class="fs-small">${item.name}</td>
+              <td class="meta">${item.id}</td>
+            </tr>
             `.trim()).join('')}
           </table>`
         } else {
