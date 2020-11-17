@@ -82,6 +82,49 @@
 }
 
 .purchase-status {
-  padding: 2px;
-  background-color: #f0f0f0;
+  background-color: #ff0;
+  border-radius: 50%;
+  display: block;
+  height: 5px;
+  width: 5px;
+}
+
+/* Collections */
+.purchase-status-0 {
+  background-color: #f44336;
+}
+
+/* Paid */
+.purchase-status-1 {
+  background-color: #4caf50;
+}
+
+/* Refunded */
+.purchase-status-2 {
+  background-color: #ffc107;
+}
+
+/* Partially Refunded */
+.purchase-status-3 {
+  background-color: #ffc107;
+}
+
+/* Void */
+.purchase-status-4 {
+  background-color: #ffc107;
+}
+
+/* Declined */
+.purchase-status-5 {
+  background-color: #f44336;
+}
+
+/* Written off */
+.purchase-status-6 {
+  background-color: #f44336;
+}
+
+/* Pending */
+.purchase-status-7 {
+  background-color: #f44336;
 }
