@@ -75,3 +75,44 @@ export function sortTags(a, b) {
   }
   return comparison;
 }
+
+export function mapStatus( code ) {
+  let str = String(code)
+  switch (str) {
+    case '0':
+      return 'Collections'
+      break;
+    case '1':
+      return 'Paid'
+      break;
+    case '2':
+      return 'Refunded'
+      break;
+    case '3':
+      return 'Partially Refunded'
+      break;
+    case '4':
+      return 'Voided'
+      break;
+    case '5':
+      return 'Declined'
+      break;
+    case '6':
+      return 'Write Off'
+      break;
+    case '7':
+      return 'Pending'
+      break;
+    default:
+      return '~'
+  }
+
+}
+
+export function maybeDivider( i ) {
+  if ( i > 0 ) {
+    return `<hr />`
+  } else {
+    return ``
+  }
+}
