@@ -38,8 +38,22 @@
 }
 
 .table-list {
-  display: list-item;
-  margin-left: 22px;
+/*  display: list-item;
+  margin-left: 22px; */
+}
+
+::marker {
+  color: #49545c;
+  font-size: small
+}
+
+.table-list::before {
+  color: #49545c;
+  content: "\2022";
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 8px;
+  vertical-align: top;
 }
 
 .accordion {
