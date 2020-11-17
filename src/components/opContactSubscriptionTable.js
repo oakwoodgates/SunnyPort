@@ -9,7 +9,7 @@ export default function opContactSubscriptionTable ( args ) {
           ${args.ontraport.subs.map((item, i) => `
             <table class="">
               <tr class="row-bg-light"><td colspan="2" class="text-center"><b>${item.name}<b></td></tr>
-              <tr><td class="table-list">Status:</td><td><span class="c-tag c-tag--pill c-tag--${mapStatusColor(item.status)}"><span>${mapStatus(item.status)}</span></span></td></tr>
+              <tr><td class="table-list">Status:</td><td><span class="c-tag c-tag--${mapStatusColor(item.status)}"><span>${mapStatus(item.status)}</span></span></td></tr>
               <tr><td class="table-list">Original Payment:</td><td>${new Date(item.orig_month_date * 1000).toLocaleDateString("en-US", {day:'numeric',month:'numeric',year:'2-digit'})}</td></tr>
               <tr><td class="table-list">Next Payment:</td><td>${new Date(item.payment_next_date * 1000).toLocaleDateString("en-US", {day:'numeric',month:'numeric',year:'2-digit'})}</td></tr>
               <tr><td class="table-list">Transactions:</td><td>${item.transactions}</td></tr>
