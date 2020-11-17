@@ -109,6 +109,28 @@ export function mapStatus( code ) {
 
 }
 
+export function mapStatusColor( code ) {
+  let str = String(code)
+  switch (str) {
+    case '1':
+      return 'green'
+      break;
+    case '0':
+    case '5':
+    case '6':
+    case '7':
+      return 'red'
+      break;
+    case '2':
+    case '3':
+    case '4':
+      return 'yellow'
+      break;
+    default:
+      return 'grey'
+  }
+}
+
 export function maybeDivider( i ) {
   if ( i > 0 ) {
     return `<hr />`
