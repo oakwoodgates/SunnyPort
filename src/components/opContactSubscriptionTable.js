@@ -5,7 +5,7 @@ export default function opContactSubscriptionTable ( args ) {
   if ( args.ontraport.id ) {
     if ( args.ontraport.subs ) {
       return `
-        <p class="meta text-center">Will display up to the 50 most recent subscriptions. Dates displayed as M/D/YY</p>
+        <p class="meta text-center">Dates displayed as M/D/YY</p>
           ${args.ontraport.subs.map((item, i) => `
             <table class="">
               <tr class="row-bg-light"><td colspan="2" class="text-center"><b>${item.name}<b></td></tr>
