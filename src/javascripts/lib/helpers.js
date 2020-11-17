@@ -112,18 +112,18 @@ export function mapStatus( code ) {
 export function mapStatusColor( code ) {
   let str = String(code)
   switch (str) {
-    case '1':
+    case '1': // Paid
       return 'green'
       break;
-    case '0':
-    case '5':
-    case '6':
-    case '7':
+    case '0': // Collections
+    case '5': // Declined
+    case '6': // Written off
+    case '7': // Pending
       return 'red'
       break;
-    case '2':
-    case '3':
-    case '4':
+    case '2': // Refunded
+    case '3': // Partially Refunded
+    case '4': // Void
       return 'yellow'
       break;
     default:
