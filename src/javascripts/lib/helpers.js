@@ -117,8 +117,6 @@ export function mapStatusColor( code ) {
       break;
     case '0': // Collections
     case '7': // Pending
-      return 'yellow'
-      break
     case '5': // Declined
     case '6': // Written off
       return 'red'
@@ -126,7 +124,7 @@ export function mapStatusColor( code ) {
     case '2': // Refunded
     case '3': // Partially Refunded
     case '4': // Void
-      return 'grey'
+      return 'yellow'
       break;
     default:
       return 'grey'
