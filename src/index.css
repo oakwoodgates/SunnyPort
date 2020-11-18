@@ -102,9 +102,6 @@
   transition: display 0.2s ease-out;
 }
 
-.purchase-status {
-  border-radius: 50%;
-  display: block;
-  height: 5px;
-  width: 5px;
+.c-tag {
+    padding: 0px 5px;
 }
