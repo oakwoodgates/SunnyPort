@@ -1,11 +1,12 @@
 import { sortTags } from '../javascripts/lib/helpers.js'
 
 export default function opContactTagsTable ( args ) {
-  if ( args.ontraport.id ) {
+  if ( args.ontraport.data.id ) {
     if ( args.ontraport.contact_tags ) {
       args.ontraport.contact_tags.sort(sortTags)
       return `
         <table class="table-striped">
+          <tr><th>Tag</th><th>ID</th></tr>
           ${args.ontraport.contact_tags.map((item, i) => `
             <tr>
               <td class="fs-small">${item.name}</td>
