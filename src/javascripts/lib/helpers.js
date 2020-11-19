@@ -138,3 +138,32 @@ export function maybeDivider( i ) {
     return ``
   }
 }
+
+export function mapReadingStatus( code ) {
+  let str = String(code)
+  switch (str) {
+    case '1':
+      return 'Open'
+      break;
+    case '2':
+      return 'Assigned'
+      break;
+    case '3':
+      return 'In Prog'
+      break;
+    case '4':
+      return 'Awaiting'
+      break;
+    case '5':
+      return 'Closed'
+      break;
+    case '6':
+      return 'Reassign'
+      break;
+    case '7':
+      return 'Cancelled'
+      break;
+    default: 
+      return 'No Set'
+  }
+}
