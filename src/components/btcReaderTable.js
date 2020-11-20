@@ -13,7 +13,7 @@ export default function btcReaderTable ( args ) {
           <tr><td>Rating:</td><td>${args.ontraport.ftr.rating} <span class="u-fg-yellow-600">&#9733;</span></td></tr>
         </table>
         <table class="table-striped">
-          <caption>Open Readings</caption>
+          <caption>Assigned Readings</caption>
           <tr><th>ID</th><th>Date</th><th>Due</th><th>Status</th></tr>
           ${args.ontraport.ftr_new.open_readings.map((item, i) => `
             <tr class="fs-small">
