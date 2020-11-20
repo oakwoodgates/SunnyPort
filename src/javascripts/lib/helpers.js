@@ -76,7 +76,7 @@ export function sortTags(a, b) {
   return comparison;
 }
 
-export function mapStatus( code ) {
+export function mapTransactionStatus( code ) {
   let str = String(code)
   switch (str) {
     case '0':
@@ -109,7 +109,7 @@ export function mapStatus( code ) {
 
 }
 
-export function mapStatusColor( code ) {
+export function mapTransactionStatusColor( code ) {
   let str = String(code)
   switch (str) {
     case '1': // Paid
@@ -125,6 +125,35 @@ export function mapStatusColor( code ) {
     case '3': // Partially Refunded
     case '4': // Void
       return 'yellow'
+      break;
+    default:
+      return 'grey'
+  }
+}
+
+export function mapSubscriptionStatus( code ) {
+  let str = String(code)
+  switch (str) {
+    case '0':
+      return 'Current'
+      break;
+    case '1':
+      return 'Past Due'
+      break;
+    default:
+      return '~'
+  }
+
+}
+
+export function mapSubscriptionStatusColor( code ) {
+  let str = String(code)
+  switch (str) {
+    case '0': // Current
+      return 'green'
+      break;
+    case '1': // Past Due
+      return 'red'
       break;
     default:
       return 'grey'
@@ -163,7 +192,7 @@ export function mapReadingStatus( code ) {
     case '7':
       return 'Cancelled'
       break;
-    default: 
+    default:
       return 'No Set'
   }
 }
