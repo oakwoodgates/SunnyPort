@@ -10,7 +10,7 @@ export default function opContactDataTable ( args ) {
         <tr><td>Country</td><td>${args.ontraport.data.country}</td></tr>
         <tr><td>Purchases</td><td>${args.ontraport.data.num_purchased}</td></tr>
         <tr><td>Spent</td><td>$${args.ontraport.data.spent}</td></tr>
-        <tr><td>Open Invoices</td><td>${args.ontraport.data.unpaid_invoices}</td></tr>
+        <tr><td>Open Invoices</td><td>$${args.ontraport.data.unpaid_invoices}</td></tr>
         <tr><td>Membership</td><td>${args.ontraport.data.has_membership}</td></tr>
       </table>`
   } else {
