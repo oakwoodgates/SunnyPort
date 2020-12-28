@@ -135,6 +135,11 @@ table caption,
     padding: 0px 5px;
 }
 
+.msg {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 hr {
   border-color: #ddd;
   margin: 10px auto 5px;

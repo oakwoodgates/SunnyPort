@@ -6,6 +6,40 @@ import btcReaderTable from '../components/btcReaderTable.js'
 import btcRequestTable from '../components/btcRequestTable.js'
 import I18n from '../javascripts/lib/i18n.js'
 
+
+function makePanel( name, args ) {
+  if ( args.ontraport.data.id ) {
+    let panel = '';
+    switch (name) {
+      case 'Contact Tags':
+        panel = opContactTagsTable(args);
+        break;
+      case 'Purchase History':
+        panel = opContactPurchaseTable(args);
+        break;
+      case 'Subscriptions':
+        panel = opContactSubscriptionTable(args);
+        break;
+      case 'Subscriptions':
+        panel = opContactSubscriptionTable(args);
+        break;
+      case 'Subscriptions':
+        panel = opContactSubscriptionTable(args);
+        break;
+      default:
+        panel = '';
+    }
+    if ( panel.length > 0 ) {
+      return `
+      <button class="accordion">${name}</button>
+      <div class="panel">
+        ${panel}
+      </div>`;
+    }
+  }
+}
+
+
   export default function (args) {
     return `
       <div class="example-app">
@@ -13,18 +47,9 @@ import I18n from '../javascripts/lib/i18n.js'
         <div class="panel show">
           ${opContactDataTable(args)}
         </div>
-        <button class="accordion">Contact Tags</button>
-        <div class="panel">
-          ${opContactTagsTable(args)}
-        </div>
-        <button class="accordion">Purchase History</button>
-        <div class="panel">
-          ${opContactPurchaseTable(args)}
-        </div>
-        <button class="accordion">Subscriptions</button>
-        <div class="panel">
-          ${opContactSubscriptionTable(args)}
-        </div>
+        ${makePanel( 'Contact Tags', args )}
+        ${makePanel( 'Purchase History', args )}
+        ${makePanel( 'Subscriptions', args )}
         <button class="accordion">FTR Reader</button>
         <div class="panel">
           ${btcReaderTable(args)}
