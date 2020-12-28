@@ -26,7 +26,7 @@ export default function btcReaderTable ( args ) {
         </table>
       </div>`
     } else {
-      return `<p>No data found</p>`
+      return `<p class="msg">No Readings found.</p>`
     }
   }
 }

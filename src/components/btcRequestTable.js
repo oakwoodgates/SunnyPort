@@ -1,11 +1,14 @@
 import { mapReadingStatus } from '../javascripts/lib/helpers.js'
 
 export default function btcRequestTable ( args ) {
-  console.log('btcRequestTable', args);
   if ( args.ontraport.data.id ) {
     if ( args.ontraport.ftr ) {
       return `
         <div>
+          <table class="table-list">
+            <tr><th colspan="2" class="text-center">Data</th></tr>
+            <tr><td>Total Requests:</td><td>${args.ontraport.ftr_new.total_requests}</td></tr>
+          </table>
           ${args.ontraport.ftr_new.open_requests.map((item, i) => `
             <table class="table-list">
               <caption>Open Request #${i+1}</caption>
@@ -18,7 +21,7 @@ export default function btcRequestTable ( args ) {
             `.trim()).join('')}
         </div>`
     } else {
-      return `<p>No data found</p>`
+      return `<p class="msg">No Requests found.</p>`
     }
   }
 }

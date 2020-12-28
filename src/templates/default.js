@@ -20,11 +20,11 @@ function makePanel( name, args ) {
       case 'Subscriptions':
         panel = opContactSubscriptionTable(args);
         break;
-      case 'Subscriptions':
-        panel = opContactSubscriptionTable(args);
+      case 'FTR Reader':
+        panel = btcReaderTable(args);
         break;
-      case 'Subscriptions':
-        panel = opContactSubscriptionTable(args);
+      case 'FTR Client':
+        panel = btcRequestTable(args);
         break;
       default:
         panel = '';
@@ -50,14 +50,8 @@ function makePanel( name, args ) {
         ${makePanel( 'Contact Tags', args )}
         ${makePanel( 'Purchase History', args )}
         ${makePanel( 'Subscriptions', args )}
-        <button class="accordion">FTR Reader</button>
-        <div class="panel">
-          ${btcReaderTable(args)}
-        </div>
-        <button class="accordion">FTR Client</button>
-        <div class="panel">
-          ${btcRequestTable(args)}
-        </div>
+        ${makePanel( 'FTR Reader', args )}
+        ${makePanel( 'FTR Client', args )}
         <div class="legend-panel">
           <hr />
           <p class="meta text-center">All dates displayed as M/D/YY</p>
