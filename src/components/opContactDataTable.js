@@ -1,5 +1,19 @@
 export default function opContactDataTable ( args ) {
   if ( args.ontraport.data.id ) {
+    let extra_data = '';
+    let tags = args.ontraport.contact_tags;
+    var i;
+    for (i = 0; i < tags.length; i++) {
+      switch (tags[i].id) {
+        case '332':
+          extra_data += `<span class="c-tag c-tag--blue">${tags[i].name}</span>`;
+          break;
+        default:
+      }
+    }
+    if ( extra_data ) {
+      extra_data = `<tr><td>Highlights</td><td>${extra_data}</td></tr>`
+    }
     return `
       <table class="table-striped">
         <tr><th></th><th></th></tr>
@@ -12,8 +26,9 @@ export default function opContactDataTable ( args ) {
         <tr><td>Spent</td><td>$${args.ontraport.data.spent}</td></tr>
         <tr><td>Open Invoices</td><td>$${args.ontraport.data.unpaid_invoices}</td></tr>
         <tr><td>Membership</td><td>${args.ontraport.data.has_membership}</td></tr>
+        ${extra_data}
       </table>`
   } else {
-    return `<p>no contact found</p>`
+    return `<p class="msg">No Contact found.</p>`
   }
 }
