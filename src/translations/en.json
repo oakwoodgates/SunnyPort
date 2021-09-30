@@ -1,10 +1,14 @@
 {
   "app": {
-    "name": "Example App",
-    "short_description": "Short Description",
+    "name": "Biddy Data",
+    "short_description": "Adds contact data from Ontraport and FTR data from the Community.",
     "long_description": "Long Description",
     "installation_instructions": "Configure the following app settings, then click Install:...",
-    "title": "Example App"
+    "title": "Biddy Data",
+    "parameters": {
+      "opapp" : { "label": "Ontraport App ID" , "helpText": "Find these here: https://app.ontraport.com/#!/api_settings/listAll" },
+      "opkey" : { "label": "Ontraport API Key" }
+    }
   },
   "default": {
     "organizations": "organizations"
