@@ -122,6 +122,10 @@ table caption,
 }
 
 .legend-panel {
+  margin-bottom: 10px;
+}
+
+.fix-layout {
   width: 95%;
 }
 
@@ -135,9 +139,13 @@ table caption,
     padding: 0px 5px;
 }
 
+.highlights .c-tag {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
 .msg {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 5px;
 }
 
 hr {
