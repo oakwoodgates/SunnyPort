@@ -75,3 +75,124 @@ export function sortTags(a, b) {
   }
   return comparison;
 }
+
+export function mapTransactionStatus( code ) {
+  let str = String(code)
+  switch (str) {
+    case '0':
+      return 'Collections'
+      break;
+    case '1':
+      return 'Paid'
+      break;
+    case '2':
+      return 'Refunded'
+      break;
+    case '3':
+      return 'Partially Refunded'
+      break;
+    case '4':
+      return 'Voided'
+      break;
+    case '5':
+      return 'Declined'
+      break;
+    case '6':
+      return 'Write Off'
+      break;
+    case '7':
+      return 'Pending'
+      break;
+    default:
+      return '~'
+  }
+
+}
+
+export function mapTransactionStatusColor( code ) {
+  let str = String(code)
+  switch (str) {
+    case '1': // Paid
+      return 'green'
+      break;
+    case '0': // Collections
+    case '7': // Pending
+    case '5': // Declined
+    case '6': // Written off
+      return 'red'
+      break;
+    case '2': // Refunded
+    case '3': // Partially Refunded
+    case '4': // Void
+      return 'yellow'
+      break;
+    default:
+      return 'grey'
+  }
+}
+
+export function mapSubscriptionStatus( code ) {
+  let str = String(code)
+  switch (str) {
+    case '0':
+      return 'Current'
+      break;
+    case '1':
+      return 'Past Due'
+      break;
+    default:
+      return '~'
+  }
+
+}
+
+export function mapSubscriptionStatusColor( code ) {
+  let str = String(code)
+  switch (str) {
+    case '0': // Current
+      return 'green'
+      break;
+    case '1': // Past Due
+      return 'red'
+      break;
+    default:
+      return 'grey'
+  }
+}
+
+export function maybeDivider( i ) {
+  if ( i > 0 ) {
+    return `<hr />`
+  } else {
+    return ``
+  }
+}
+
+export function mapReadingStatus( code ) {
+  let str = String(code)
+  switch (str) {
+    case '1':
+      return 'Open'
+      break;
+    case '2':
+      return 'Assigned'
+      break;
+    case '3':
+      return 'In Prog'
+      break;
+    case '4':
+      return 'Awaiting'
+      break;
+    case '5':
+      return 'Closed'
+      break;
+    case '6':
+      return 'Reassign'
+      break;
+    case '7':
+      return 'Cancelled'
+      break;
+    default:
+      return 'No Set'
+  }
+}
